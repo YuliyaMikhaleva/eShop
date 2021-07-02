@@ -1,0 +1,19 @@
+/*body{*/
+/*    display: block;*/
+/*    justify-content: center;*/
+/*}*/
+.form{
+    margin: 0 auto;
+    border: 3px solid green;
+    width: 40%;
+    padding: 10px;
+    background-image: url("hamburger.jpg");
+    background-position: 128% 103%;
+    background-size: 67%;
+    background-repeat: no-repeat;
+}
+.form_title{
+    color: green;
+    text-align: center;
+    margin: 0 auto;
+}
