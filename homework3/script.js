@@ -95,7 +95,7 @@ class BasketItem {
     }
     render(){
         return `
-          <div class="basket-item">
+          <div class="basket-item" id="${this.id_product}">
            <span class="cart_part">${this.product_name}</span>
            <span class="cart_part"><span id="${this.id_product}"  class="product_number">1</span> шт.</span>
            <span class="cart_part"><span id="${this.id_product}"  class="product_price">${this.price}</span> руб.</span>
@@ -254,15 +254,15 @@ class Basket {
         let productsCount = document.querySelector(`.product_number[id = "${productId}"]`);
         productsCount.textContent--;
         if (productsCount.textContent == "0"){//если количество товаров с выбранным id = 0
-            this.clearAll();//очистить всё
+            this.clearItem(productId);//очистить блок того товара, где количество = 0
         }
     }
 
-    //удаление всех элементов в корзине
-    clearAll(){
+    //удаление элементов с выбранным id в корзине
+    clearItem(productId){
         let basketHtml = ""; // объявляем basketHTML как пустую строку
-        let newProducts = document.querySelector('.newProducts');
-        newProducts.innerHTML = basketHtml;
+        let basketItem = document.querySelector(`.basket-item[id = "${productId}"]`);
+        basketItem.innerHTML = basketHtml;
     }
 
     //подсчет итоговой суммы всех товаров
