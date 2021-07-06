@@ -39,13 +39,25 @@ class GoodsList {
     constructor() {
         this.goods = [];// массив объектов с товарами из JSON документа
     }
+
+    // //ЗАДАНИЕ 3* сделать, чтобы fetchGoods() возвращал промис, а render() вызывался в обработчике этого промиса.
+
     // fetchGoods(){
-    //     return fetch (`${API_URL}/catalogData.json`)
-    //     .then (data => data.json())
-    //     .catch (error => {
+    //     const listPromise = fetch (`${API_URL}/catalogData.json`);//создаем новую переменную которая через метод fetch всегда возвращает промис
+    //     listPromise //настраиваем обработчики событий (в случае успешного выполнения выполняется then, в случае ошибки - catch)
+    //         .then (data => data.json()) //ищем данные в формате json
+    //         .then((data)=>{//а после
+    //             this.goods = [...data];//распаковываем наш объект и записываем в массив товаров
+    //             this.render();//отрисовываем на странице
+    //             this.calcAllGoods();//считаем сумму товаров на странице
+    //             this.init();//назначаем обработчика клика всем кнопкам "добавить в корзину"
+    //         })
+    //         //в случае ошибки срабатывает функция catch
+    //         .catch (error => {
     //         console.log("error: ", error);
-    //     });
+    //         });
     // }
+
     fetchGoods() {//считывание данных с сервера и отрисовка на странице
         makeGETRequest( `${API_URL}/catalogData.json`, (good) => { //принимает на вход ссылку сервера.
             this.goods = JSON.parse(good); //преобразовываем json-строку и прописываем в массив
