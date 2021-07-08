@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>eShop</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header class="page-header">
+    <navbar class="page-header-navbar">
+        <a href="#" class="page-header-navbar-img">
+            <img src="img/logo.png" alt="logo">
+        </a>
+      <div class="page-header-navbar-txt">
+        <a class="page-header-navbar-txt-link" href="#">Products</a>
+        <button class="cart-button" type="button">
+            <i class="fas fa-shopping-cart cart-button-basket"></i>
+            <span class="counter">0</span>
+        </button>
+        <input type="text" class="goods-search">
+        <button class="search-button" type="button">Искать</button>
+
+      </div>
+    </navbar>
+    <span class="page-header-txt">Trekking</span>
+</header>
+<main>
+    <div class="cart hidden">
+        <div class="cart_parametrs">
+            <span class="cart_part">Название товара</span>
+            <span class="cart_part">Количество</span>
+            <span class="cart_part">Цена за шт.</span>
+            <span class="cart_part">Итого</span>
+            <span class="cart_part"></span>
+        </div>
+<!--        Здесь будут добавлены товары в корзине-->
+                <div class="newProducts">
+                </div>
+        <div class="cart_summ">
+            <span>Товаров в корзине на сумму:<span class="basket_summ">0</span>рублей</span>
+        </div>
+
+    </div>
+  <div class="main-products container">
+<!--      сюда будут добавлены товары-->
+  </div>
+    <div class="main-sum"></div>
+</main>
+<footer class="page-footer">
+    <div class="page-footer-txt">
+        <span class="page-footer-txt-title">trekking</span>
+        <p class="page-footer-txt-paragraph">Наш интернет-магазин предлагает Вам большое количество товаров для трекинга. Выбирайте удобное и качественное снаряжение: Наша одежда - Ваш комфорт.</p>
+        <form action="#">
+            <fieldset>Форма обратной связи
+                <label for="name">
+                    <input class= "formInput" type="text" placeholder="Имя" id="name">
+                    <span id="nameError" class="error">Имя должно содержать только буквы</span>
+                </label>
+                <label for="mobile">
+                    <input class= "formInput" type="text" placeholder="Телефон:+7(000)000-0000" id="mobile">
+                    <span id="mobileError" class="error">Телефон должен иметь вид +7(000)000-0000.</span>
+                </label>
+                <label for="email">
+                    <input class= "formInput" type="text" placeholder="email" id="email">
+                    <span id="emailError" class="error">E-mail должен иметь вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.</span>
+                </label>
+                <label for="text">
+                    <textarea name="text" id="text" cols="30" rows="10" placeholder="Текст сообщения"></textarea>
+                </label>
+                <button type="submit" id="submit">Отправить</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="page-footer-links">
+        <div class="page-footer-links-table">
+            <a class="page-footer-links-table-col">credits </a>
+            <a class="page-footer-links-table-col">privacy </a>
+            <a class="page-footer-links-table-col">about </a>
+            <a class="page-footer-links-table-col">contact </a>
+        </div>
+        <p class="page-footer-links-design">Design by gialuca cosetta</p>
+    </div>
+</footer>
+<script src="script2.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
