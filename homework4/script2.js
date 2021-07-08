@@ -73,39 +73,3 @@ form.addEventListener('submit', function(event){
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// https://github.com/sokoloverov/js-/blob/l4/HomeWorks2/scriptcart.js
-//
-//
-// const arrNames = [];
-// const name = document.querySelectorAll('#name');
-// name.addEventListener('keyup',function (event) {
-//     arrNames.push(event.key);
-// })
-//
-// //затем проверяем заполненные поля
-//
-// let button = document.querySelector('#submit');
-// button.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     formName.classList.add('submitButton');
-//
-//     //проверка с регулярными выражениями
-//     let nameUser = arrNames.join('');//объединим все слова с пробельным разделителем
-//
-//
-// })
