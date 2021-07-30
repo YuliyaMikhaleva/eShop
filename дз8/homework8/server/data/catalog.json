@@ -1,0 +1,74 @@
+[
+  {
+    "id_product": 1,
+    "img": "img/1t_shirt.png",
+    "product_name": "Футболка спортивная",
+    "price": 650
+  },
+  {
+    "id_product": 2,
+    "img": "img/2pants.png",
+    "product_name": "Брюки для треккинга",
+    "price": 2000
+  },
+  {
+    "id_product": 3,
+    "img": "img/3backpack.png",
+    "product_name": "Рюкзак Salomon 20л.",
+    "price": 3000
+  },
+  {
+    "id_product": 4,
+    "img": "img/4giacket.png",
+    "product_name": "Лёгкий пуховик для треккинга",
+    "price": 5000
+  },
+  {
+    "id_product": 5,
+    "img": "img/5shoes.png",
+    "product_name": "Треккинговые ботинки",
+    "price": 5500
+  },
+  {
+    "id_product": 6,
+    "img": "img/6t_shirts.png",
+    "product_name": "Спортивная футболка женская",
+    "price": 650
+  },
+  {
+    "id_product": 7,
+    "img": "img/7membran.png",
+    "product_name": "Куртка мембранная",
+    "price": 10000
+  },
+  {
+    "id_product": 8,
+    "img": "img/8очки.png" ,
+    "product_name": "Очки солнцезащитные",
+    "price": 2499
+  },
+  {
+    "id_product": 9,
+    "img": "img/9флис.png",
+    "product_name": "Флисовая кофта",
+    "price": 999
+  },
+  {
+    "id_product": 10,
+    "img": "img/10панама.png",
+    "product_name": "Панама для походов",
+    "price": 750
+  },
+  {
+    "id_product": 11,
+    "img": "img/11шорты.png",
+    "product_name": "Шорты женские",
+    "price": 1500
+  },
+  {
+    "id_product": 12,
+    "img": "img/12носки.png",
+    "product_name": "Носки треккинговые",
+    "price": 500
+  }
+]
