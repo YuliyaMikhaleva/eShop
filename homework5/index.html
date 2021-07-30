@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>eShop</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id="app">
+<header class="page-header">
+    <navbar class="page-header-navbar">
+        <a href="#" class="page-header-navbar-img">
+            <img src="img/logo.png" alt="logo">
+        </a>
+      <div class="page-header-navbar-txt">
+          <form action="#" >
+              <input type="text" class="goods-search" v-model="searchLine">
+          </form>
+        <a class="page-header-navbar-txt-link" href="#">Products</a>
+        <button class="cart-button" type="button" @click="isVisibleCart = !isVisibleCart">
+            <i class="fas fa-shopping-cart cart-button-basket"></i>
+            <span class="counter">{{ counter }}</span>
+        </button>
+      </div>
+    </navbar>
+    <span class="page-header-txt">Trekking</span>
+</header>
+<main>
+    <div class="cart" v-if="isVisibleCart">
+        <div class="cart_parametrs">
+            <span class="cart_part">Название товара</span>
+            <span class="cart_part">Количество</span>
+            <span class="cart_part">Цена за шт.</span>
+            <span class="cart_part">Итого</span>
+            <span class="cart_part"></span>
+        </div>
+        <p v-if="!cartItems.length">Нет данных</p>
+
+        <!--        Здесь будут добавлены товары в корзине-->
+                <div class="newProducts" v-for="product of cartItems">
+
+                    <div class="basket-item" id="{{ product.id_product }}">
+                    <span class="cart_part">{{ product.product_name }}</span>
+                    <span class="cart_part"><span id="{{ product.id_product }}"  class="product_number">{{ product.count }}</span> шт.</span>
+                    <span class="cart_part"><span id="{{ product.id_product }}" class="product_price">{{ product.price }}</span> руб.</span>
+                    <span class="cart_part"><span class = "summOfRow" id="{{ product.id_product }}"  class="product_price">{{ product.finishprice }}</span> руб.</span>
+                    <button class="deleteProduct" id="{{ product.id_product }}" data-productId="{{ product.id_product }}" @click="removeProducts(product)">Удалить товар</button>
+                    </div>
+
+                </div>
+        <div class="cart_summ">
+            <span>Товаров в корзине на сумму:<span class="basket_summ">{{ totalSumm }}</span>рублей</span>
+        </div>
+
+    </div>
+<!--    <div class="cart hidden" v-else="isVisibleCart">-->
+<!--        <div class="cart_parametrs">-->
+<!--            <span class="cart_part">Название товара</span>-->
+<!--            <span class="cart_part">Количество</span>-->
+<!--            <span class="cart_part">Цена за шт.</span>-->
+<!--            <span class="cart_part">Итого</span>-->
+<!--            <span class="cart_part"></span>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        Здесь будут добавлены товары в корзине&ndash;&gt;-->
+<!--        <div class="newProducts">-->
+<!--            <div class="basket-item" id="{{ product.id_product }}" v-for="product of cartItems">-->
+<!--                <span class="cart_part">{{ product.product_name }}</span>-->
+<!--                <span class="cart_part"><span id="{{ product.id_product }}"  class="product_number">1</span> шт.</span>-->
+<!--                <span class="cart_part"><span id="{{ product.id_product }}" class="product_price">"{{ product.price }}"</span> руб.</span>-->
+<!--                <span class="cart_part"><span class = "summOfRow" id="{{ product.id_product }}"  class="product_price">"{{ product.price }}"</span> руб.</span>-->
+<!--                <button class="deleteProduct" id="{{ product.id_product }}" data-productId="{{ product.id_product }}" @click="removeProducts(product)">Удалить товар</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="cart_summ">-->
+<!--            <span>Товаров в корзине на сумму:<span class="basket_summ">0</span>рублей</span>-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+    <div class="main-products container" >
+             <div class="main-products-product" v-for="product of filtered">
+               <img class="main-products-product-img" :src="imgCatalog" alt="photo" height="189">
+               <span class="main-products-product-name">{{ product.product_name }}</span>
+               <span class="main-products-product-price" id="{{ product.id_product }}" > {{ product.price }} </span><span> руб.</span>
+               <button class="main-products-product-button" data-productId="{{ product.id_product }}" @click="addProducts(product)">Добавить в корзину</button>
+             </div>
+<!--      сюда будут добавлены товары-->
+  </div>
+    <div class="main-sum"></div>
+</main>
+<footer class="page-footer">
+    <div class="page-footer-txt">
+        <span class="page-footer-txt-title">trekking</span>
+        <p class="page-footer-txt-paragraph">Наш интернет-магазин предлагает Вам большое количество товаров для трекинга. Выбирайте удобное и качественное снаряжение: Наша одежда - Ваш комфорт.</p>
+        <form action="#" id="footer_form">
+            <fieldset>Форма обратной связи
+                <label for="name">
+                    <input class= "formInput" type="text" placeholder="Имя" id="name">
+                    <span id="nameError" class="error">Имя должно содержать только буквы</span>
+                </label>
+                <label for="mobile">
+                    <input class= "formInput" type="text" placeholder="Телефон:+7(000)000-0000" id="mobile">
+                    <span id="mobileError" class="error">Телефон должен иметь вид +7(000)000-0000.</span>
+                </label>
+                <label for="email">
+                    <input class= "formInput" type="text" placeholder="email" id="email">
+                    <span id="emailError" class="error">E-mail должен иметь вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.</span>
+                </label>
+                <label for="text">
+                    <textarea name="text" id="text" cols="30" rows="10" placeholder="Текст сообщения"></textarea>
+                </label>
+                <button type="submit" id="submit" @click.prevent="sendData()">Отправить</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="page-footer-links">
+        <div class="page-footer-links-table">
+            <a class="page-footer-links-table-col">credits </a>
+            <a class="page-footer-links-table-col">privacy </a>
+            <a class="page-footer-links-table-col">about </a>
+            <a class="page-footer-links-table-col">contact </a>
+        </div>
+        <p class="page-footer-links-design">Design by gialuca cosetta</p>
+    </div>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
