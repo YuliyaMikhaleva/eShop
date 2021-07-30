@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>eShop</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id="app">
+<header class="page-header">
+    <navbar class="page-header-navbar">
+        <a href="#" class="page-header-navbar-img">
+            <img src="img/logo.png" alt="logo">
+        </a>
+      <div class="page-header-navbar-txt">
+
+          <search ref="search" :products="products" :searchLine="searchLine" ></search>
+
+        <a class="page-header-navbar-txt-link" href="#">Products</a>
+        <button class="cart-button" type="button" @click="isVisibleCart = !isVisibleCart">
+            <i class="fas fa-shopping-cart cart-button-basket"></i>
+            <span class="counter">{{ counter }}</span>
+        </button>
+      </div>
+    </navbar>
+    <span class="page-header-txt">Trekking</span>
+</header>
+<main>
+
+    <error v-if="dataError"></error>
+
+    <basket ref="basket" :cart-items="cartItems" :img="imgCatalog" :is-visible-cart="isVisibleCart"></basket>
+
+    <products ref="products" ></products>
+
+    <div class="main-sum"></div>
+</main>
+<footer class="page-footer">
+    <div class="page-footer-txt">
+        <span class="page-footer-txt-title">trekking</span>
+        <p class="page-footer-txt-paragraph">Наш интернет-магазин предлагает Вам большое количество товаров для трекинга. Выбирайте удобное и качественное снаряжение: Наша одежда - Ваш комфорт.</p>
+        <footerform></footerform>
+
+    </div>
+    <div class="page-footer-links">
+        <div class="page-footer-links-table">
+            <a class="page-footer-links-table-col">credits </a>
+            <a class="page-footer-links-table-col">privacy </a>
+            <a class="page-footer-links-table-col">about </a>
+            <a class="page-footer-links-table-col">contact </a>
+        </div>
+        <p class="page-footer-links-design">Design by gialuca cosetta</p>
+    </div>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script src="js/footerForm.js"></script>
+<script src="js/error.js"></script>
+<script src="js/search.js"></script>
+<script src="js/basketComponent.js"></script>
+<script src="js/productComponent.js"></script>
+<script src="js/server.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
