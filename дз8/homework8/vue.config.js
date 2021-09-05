@@ -6,7 +6,9 @@
 // 'http://localhost:3000' и получает там нужный ответ и просто передает его, проксирует - где запросы которые приходят ему на /api
 // он отправляет их на 'http://localhost:3000' такой же запрос, и поэтому наши заголовки course уже не актуальны
 module.exports = {
-    publicPath: '/ eShop /',
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/eShop/'
+        : '/',
     devServer: {
         proxy:{
             '/api':{
